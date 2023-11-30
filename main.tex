@@ -5,17 +5,17 @@
 %% The original source files were:
 %%
 %% samples.dtx  (with options: `sigconf')
-%% 
+%%
 %% IMPORTANT NOTICE:
-%% 
+%%
 %% For the copyright see the source file.
-%% 
+%%
 %% Any modified versions of this file must be renamed
 %% with new filenames distinct from sample-sigconf.tex.
-%% 
+%%
 %% For distribution of the original source see the terms
 %% for copying and modification in the file samples.dtx.
-%% 
+%%
 %% This generated file may be distributed as long as the
 %% original source files, as listed above, are part of the
 %% same distribution. (The sources need not necessarily be
@@ -113,6 +113,18 @@
 \usepackage{yade}
 \usepackage{tikz-cd}
 \usepackage{ebutf8}
+\usepackage{import}
+
+% Shortcut for temporary editing
+\usepackage{xcolor}
+\newcommand{\todo}{\textcolor{red}{\textbf{Todo}}\PackageWarning{todo}{todo}}
+\newcommand{\todot}[1]{\textcolor{red}{\textbf{Todo:} #1}\PackageWarning{todo}{todo}}
+% lispsum but in red
+\usepackage{lipsum}
+\newcommand{\todoLipsum}[1]{\todot{\lipsum[#1]}\PackageWarning{todo}{todo}}
+% For us to write visible comments to solve
+\newcommand{\TL}[1]{\textcolor{blue}{\textbf{TL:} #1}\PackageWarning{todo}{todo}}
+\newcommand{\AL}[1]{\textcolor{blue}{\textbf{AL:} #1}\PackageWarning{todo}{todo}}
 
 %%
 %% end of the preamble, start of the body of the document source.
@@ -229,7 +241,7 @@ Hello
 A limit of an inserter diagram $(F,G)$, called the \emph{inserter of $F$ and
   $G$}, is a cone $(I\xrightarrow{i}A, κ)$ that is universal, in the following sense:
 \begin{itemize}
-\item 
+\item
 given any other cone $(X\xrightarrow{x}A, α)$ there exists a unique 1-cell
 $X \xrightarrow{\universalins{α}} I$ such that $i∘u = x$ and $\universalins{α} = κ · i$, as summarised below.
 \[
@@ -238,7 +250,7 @@ $X \xrightarrow{\universalins{α}} I$ such that $i∘u = x$ and $\universalins{�
 \input{diagrams/ins-universal-prop.tex}
 % END OF GENERATED LATEX
 \]
-\item 
+\item
   given two cones $(X\xrightarrow{x}A,α)$ and $(X\xrightarrow{x'}A,α')$, and a
   natural transformation $γ$ such that Equation~\eqref{eq:mor-cones} holds, there is
   a unique 2-cell $\universalins{α} \xrightarrow{\universalins{γ}}\universalins{α'}$ such that.
@@ -261,12 +273,27 @@ $X \xrightarrow{\universalins{α}} I$ such that $i∘u = x$ and $\universalins{�
 \section{Application: Equivalence}
 
 
+\newpage
+
+% Sections
+\subimport{sections/}{introduction.tex}
+\subimport{sections/}{inserters.tex}
+\subimport{sections/}{application_translation.tex}
+\subimport{sections/}{application_adjunction.tex}
+\subimport{sections/}{application_equivalence.tex}
 
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{bib}
+
+% Appendix
+\appendix
+\subimport{sections/}{appendix_inserters.tex}
+\subimport{sections/}{appendix_application_translation.tex}
+\subimport{sections/}{appendix_application_adjunction.tex}
+\subimport{sections/}{appendix_application_equivalence.tex}
 
 
 
