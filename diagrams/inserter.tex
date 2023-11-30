@@ -1,0 +1,20 @@
+\begin{tikzpicture}[every node/.style={inner sep=5pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
+\node (0) at (7.142857142857143em, -4.285714285714286em) {$X$} ; 
+\node (1) at (10em, -1.4285714285714286em) {$A$} ; 
+\node (2) at (12.857142857142858em, -4.285714285714286em) {$B$} ; 
+\node (3) at (10em, -7.142857142857143em) {$A$} ; 
+\path 
+(0) to[fore, black,->, ] node[coordinate](4){} (1) 
+(1) to[fore, black,->, ] node[coordinate](5){} (2) 
+(0) to[fore, black,->, ] node[coordinate](6){} (3) 
+(3) to[fore, black,->, ] node[coordinate](7){} (2) 
+(1) to[fore, black,->, cell=0.2, ] node[coordinate](8){} (3) 
+; 
+\path[->] 
+(0) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, ] (1) 
+(1) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, ] (2) 
+(0) edge["${\scriptstyle x}$"', pos=0.5, fore, black,->, ] (3) 
+(3) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, ] (2) 
+(1) edge["${\scriptstyle α}$", pos=0.5, fore, black,->, cell=0.2, ] (3) 
+; 
+\end{tikzpicture}

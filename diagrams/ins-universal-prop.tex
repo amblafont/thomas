@@ -1,0 +1,42 @@
+\begin{tikzpicture}[every node/.style={inner sep=2pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
+\node (0) at (18.333333333333332em, -8.333333333333334em) {$X$} ; 
+\node (1) at (21.666666666666668em, -5em) {$A$} ; 
+\node (2) at (25em, -8.333333333333334em) {$B$} ; 
+\node (3) at (21.666666666666668em, -11.666666666666666em) {$A$} ; 
+\node (4) at (28.333333333333332em, -8.333333333333334em) {$=$} ; 
+\node (5) at (31.666666666666668em, -8.333333333333334em) {$X$} ; 
+\node (6) at (38.333333333333336em, -5em) {$A$} ; 
+\node (7) at (41.666666666666664em, -8.333333333333334em) {$B$} ; 
+\node (8) at (38.333333333333336em, -11.666666666666666em) {$A$} ; 
+\node (9) at (35em, -8.333333333333334em) {$I$} ; 
+\path 
+(0) to[fore, black,->, ] node[coordinate](10){} (1) 
+(1) to[fore, black,->, ] node[coordinate](11){} (2) 
+(0) to[fore, black,->, ] node[coordinate](12){} (3) 
+(3) to[fore, black,->, ] node[coordinate](13){} (2) 
+(1) to[fore, black,->, cell=0.2, ] node[coordinate](14){} (3) 
+(6) to[fore, black,->, ] node[coordinate](15){} (7) 
+(8) to[fore, black,->, ] node[coordinate](16){} (7) 
+(6) to[fore, black,->, cell=0.2, ] node[coordinate](17){} (8) 
+(5) to[fore, black,->, dashed, ] node[coordinate](18){} (9) 
+(9) to[fore, black,->, ] node[coordinate](19){} (8) 
+(5) to[fore, black,->, bend right={-17.1887338539247}, ] node[coordinate](20){} (6) 
+(5) to[fore, black,->, bend right={17.1887338539247}, ] node[coordinate](21){} (8) 
+(9) to[fore, black,->, ] node[coordinate](22){} (6) 
+; 
+\path[->] 
+(0) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, ] (1) 
+(1) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, ] (2) 
+(0) edge["${\scriptstyle x}$"', pos=0.5, fore, black,->, ] (3) 
+(3) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, ] (2) 
+(1) edge["${\scriptstyle α}$", pos=0.5, fore, black,->, cell=0.2, ] (3) 
+(6) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, ] (7) 
+(8) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, ] (7) 
+(6) edge["${\scriptstyle κ}$", pos=0.5, fore, black,->, cell=0.2, ] (8) 
+(5) edge["${\scriptstyle ∃!\universalins{α}}$", pos=0.7, fore, black,->, dashed, ] (9) 
+(9) edge["${\scriptstyle i}$"', pos=0.30000000000000004, fore, black,->, ] (8) 
+(5) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, bend right={-17.1887338539247}, ] (6) 
+(5) edge["${\scriptstyle x}$"', pos=0.5, fore, black,->, bend right={17.1887338539247}, ] (8) 
+(9) edge["${\scriptstyle i}$", pos=0.5, fore, black,->, ] (6) 
+; 
+\end{tikzpicture}
