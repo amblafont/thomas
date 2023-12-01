@@ -59,6 +59,69 @@ $X \xrightarrow{\universalins{α}} I$ such that $i∘u = x$ and $\universalins{�
   %\]
 \end{itemize}
 \end{definition}
+ \begin{definition}
+   A \emph{morphism of inserter diagrams} between
+   $
+   \begin{tikzcd}
+     A \doublerightarrow{r}{F}{G} & B
+   \end{tikzcd}
+   $
+   and 
+   $
+   \begin{tikzcd}
+     A' \doublerightarrow{r}{F'}{G'} & B'
+   \end{tikzcd}
+   $
+   consists of 1-cells $A \xrightarrow{H_A} A'$, $B\xrightarrow{H_B} B'$, and
+   2-cells $  F' H_A \xrightarrow{h_F}  H_BF$ and $H_B G \xrightarrow{h_G} G' H_A$
+   as in the following diagram
+   \[
+% YADE DIAGRAM diagrams/morphism-inserter.json
+% GENERATED LATEX
+\input{../diagrams/morphism-inserter.tex}
+% END OF GENERATED LATEX
+     \]
+   \end{definition}
+
+      \begin{lemma}
+   \label{lem:mor-inserter}
+   Using the same notations as above, given a morphism of inserter diagrams
+   there exists a unique
+   1-cell $I\xrightarrow{H_I}I'$ between the inserters such that $H_A ∘ i = i' ∘
+   H_I$, and the following equality holds.
+  \[
+% YADE DIAGRAM diagrams/morphism-inserter-univ.json
+% GENERATED LATEX
+\input{../diagrams/morphism-inserter-univ.tex}
+% END OF GENERATED LATEX
+  \]
+  \end{lemma}
+  \begin{proof}
+   By direct application of the universal property (first item).
+  \end{proof}
+  \begin{lemma}
+    Given an inserter $(I\xrightarrow{i}A, κ)$, 
+    the 1-cell $i$ is faithful and conservative, in the following sense:
+    \begin{itemize}
+      \item 
+        given two 2-cells
+        $
+        % YADE DIAGRAM diagrams/two-2-cells.json
+% GENERATED LATEX
+\input{../diagrams/two-2-cells.tex}
+% END OF GENERATED LATEX
+        $, if $ i· γ = i· γ'$, then $γ = γ'$;
+    \item 
+      given any 2-cell
+      $
+      % YADE DIAGRAM diagrams/a-2-cell.json
+      % GENERATED LATEX
+      \input{../diagrams/a-2-cell.tex}
+      % END OF GENERATED LATEX
+      $, if $i· γ$ is invertible, then so is $γ$.
+    \end{itemize}
+  \end{lemma}
+
 
 
 

@@ -1,0 +1,16 @@
+\begin{tikzpicture}[every node/.style={inner sep=2pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
+\node (0) at (10.154834247770763em, -6.450344993954613em) {$X$} ; 
+\node (1) at (16.619192305065337em, -6.450344993954613em) {$I$} ; 
+\path 
+(0) to[fore, black,->, curve={ratio=-0.20000000000000004}, ] node[coordinate](2){} (1) 
+(0) to[fore, black,->, curve={ratio=0.30000000000000004}, ] node[coordinate](3){} (1) 
+(2) to[fore, black,->, cell=0.2, curve={ratio=-0.30000000000000004}, ] node[coordinate](4){} (3) 
+(2) to[fore, black,->, cell=0.2, curve={ratio=0.30000000000000004}, ] node[coordinate](5){} (3) 
+; 
+\path[->] 
+(0) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, curve={ratio=-0.20000000000000004}, ] (1) 
+(0) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, curve={ratio=0.30000000000000004}, ] (1) 
+(2) edge["${\scriptstyle γ'}$", pos=0.5, fore, black,->, cell=0.2, curve={ratio=-0.30000000000000004}, ] (3) 
+(2) edge["${\scriptstyle γ}$"', pos=0.5, fore, black,->, cell=0.2, curve={ratio=0.30000000000000004}, ] (3) 
+; 
+\end{tikzpicture}

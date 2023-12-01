@@ -1,0 +1,20 @@
+\begin{tikzpicture}[every node/.style={inner sep=2pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
+\node (0) at (2.142857142857143em, -2.142857142857143em) {$I$} ; 
+\node (1) at (4.190620876493908em, -0.7142857142857143em) {$A$} ; 
+\node (2) at (6.381097066970098em, -2.268467494419643em) {$B$} ; 
+\node (3) at (4.190620876493908em, -3.5714285714285716em) {$A$} ; 
+\path 
+(0) to[fore, black,->, curve={ratio=-0.1}, ] node[coordinate](4){} (1) 
+(1) to[fore, black,->, curve={ratio=-0.1}, ] node[coordinate](5){} (2) 
+(0) to[fore, black,->, curve={ratio=0.1}, ] node[coordinate](6){} (3) 
+(3) to[fore, black,->, curve={ratio=0.1}, ] node[coordinate](7){} (2) 
+(1) to[fore, black,->, cell=0.2, ] node[coordinate](8){} (3) 
+; 
+\path[->] 
+(0) edge["${\scriptstyle i}$", pos=0.5, fore, black,->, curve={ratio=-0.1}, ] (1) 
+(1) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, curve={ratio=-0.1}, ] (2) 
+(0) edge["${\scriptstyle i}$"', pos=0.5, fore, black,->, curve={ratio=0.1}, ] (3) 
+(3) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, curve={ratio=0.1}, ] (2) 
+(1) edge["${\scriptstyle κ}$", pos=0.5, fore, black,->, cell=0.2, ] (3) 
+; 
+\end{tikzpicture}
