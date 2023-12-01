@@ -231,48 +231,6 @@
 \section{Introduction}
 Hello
 \section{Inserters}
-\begin{definition}
-  An \emph{inserter diagram $(F,G)$} in a 2-category $ℬ$ is a pair of parallel 1-cells
-  $
-  \begin{tikzcd}
-  A \doublerightarrow{r}{F}{G} & B
-  \end{tikzcd}
-  $.
-  A \emph{cone} of such an inserter diagram is a pair $(X\xrightarrow{x} A,α)$ consisting of a
-  1-cell $x$ and a 2-cell $α∶ F · x → G · x$.
-  % as in the following diagram:
-%   \[
-%   OLD YADE DIAGRAM diagrams/inserter.json
-% % GENERATED LATEX
-% \input{diagrams/inserter.tex}
-% % END OF GENERATED LATEX
-% \]
-
-A limit of an inserter diagram $(F,G)$, called the \emph{inserter of $F$ and
-  $G$}, is a cone $(I\xrightarrow{i}A, κ)$ that is universal, in the following sense:
-\begin{itemize}
-\item
-given any other cone $(X\xrightarrow{x}A, α)$ there exists a unique 1-cell
-$X \xrightarrow{\universalins{α}} I$ such that $i∘u = x$ and $\universalins{α} = κ · i$, as summarised below.
-\[
-% YADE DIAGRAM diagrams/ins-universal-prop.json
-% GENERATED LATEX
-\input{diagrams/ins-universal-prop.tex}
-% END OF GENERATED LATEX
-\]
-\item
-  given two cones $(X\xrightarrow{x}A,α)$ and $(X\xrightarrow{x'}A,α')$, and a
-  natural transformation $γ$ such that Equation~\eqref{eq:mor-cones} holds, there is
-  a unique 2-cell $\universalins{α} \xrightarrow{\universalins{γ}}\universalins{α'}$ such that.
-  \begin{equation}
-    \label{eq:mor-cones}
-  % YADE DIAGRAM diagrams/ins-2universal-prop.json
-% GENERATED LATEX
-\input{diagrams/ins-2universal-prop.tex}
-% END OF GENERATED LATEX
-  \end{equation}
-\end{itemize}
-\end{definition}
 \section{Application: Translating type systems}
 \subsection{Small functorss}
 \subsection{Cst}

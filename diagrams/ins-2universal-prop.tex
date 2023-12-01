@@ -1,42 +1,42 @@
 \begin{tikzpicture}[every node/.style={inner sep=2pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
-\node (0) at (2.2857142857142856em, -6.857142857142857em) {$X$} ; 
-\node (1) at (11.428571428571429em, -6.857142857142857em) {$B$} ; 
-\node (2) at (6.857142857142857em, -6.857142857142857em) {$A$} ; 
-\node (3) at (6.857142857142857em, -11.428571428571429em) {$A$} ; 
-\node (4) at (13.680774400214188em, -8.458880769104516em) {$=$} ; 
-\node (5) at (16em, -6.857142857142857em) {$X$} ; 
-\node (6) at (23.684848804192em, -6.839611636006773em) {$B$} ; 
-\node (7) at (20.571428571428573em, -6.857142857142857em) {$A$} ; 
-\node (8) at (20.571428571428573em, -11.428571428571429em) {$A$} ; 
+\node (0) at (6.857142857142857em, -6.857142857142857em) {$X$} ; 
+\node (1) at (16em, -6.857142857142857em) {$B$} ; 
+\node (2) at (11.428571428571429em, -6.857142857142857em) {$A$} ; 
+\node (3) at (11.428571428571429em, -11.428571428571429em) {$A$} ; 
+\node (4) at (17.238239924112957em, -8.458880769104516em) {$=$} ; 
+\node (5) at (18.939845630388657em, -6.857142857142857em) {$X$} ; 
+\node (6) at (26.624694434580658em, -6.839611636006773em) {$B$} ; 
+\node (7) at (23.511274201817226em, -6.857142857142857em) {$A$} ; 
+\node (8) at (23.511274201817226em, -11.428571428571429em) {$A$} ; 
 \path 
-(0) to[fore, black,->, bend right={-40.10704565915762}, ] node[coordinate](9){} (2) 
+(0) to[fore, black,->, curve={ratio=-0.5}, ] node[coordinate](9){} (2) 
 (2) to[fore, black,->, ] node[coordinate](10){} (1) 
-(0) to[fore, black,->, bend right={34.37746770784939}, ] node[coordinate](11){} (2) 
-(0) to[fore, black,->, bend right={17.1887338539247}, ] node[coordinate](12){} (3) 
-(3) to[fore, black,->, bend right={11.459155902616464}, ] node[coordinate](13){} (1) 
+(0) to[fore, black,->, curve={ratio=0.4}, ] node[coordinate](11){} (2) 
+(0) to[fore, black,->, curve={ratio=0.30000000000000004}, ] node[coordinate](12){} (3) 
+(3) to[fore, black,->, curve={ratio=0.2}, ] node[coordinate](13){} (1) 
 (2) to[fore, black,->, cell=0.2, ] node[coordinate](14){} (3) 
 (5) to[fore, black,->, ] node[coordinate](15){} (7) 
 (7) to[fore, black,->, ] node[coordinate](16){} (6) 
-(5) to[fore, black,->, bend right={-17.1887338539247}, ] node[coordinate](17){} (8) 
-(8) to[fore, black,->, bend right={5.729577951308232}, ] node[coordinate](18){} (6) 
+(5) to[fore, black,->, curve={ratio=-0.20000000000000004}, ] node[coordinate](17){} (8) 
+(8) to[fore, black,->, curve={ratio=0.1}, ] node[coordinate](18){} (6) 
 (7) to[fore, black,->, cell=0.2, ] node[coordinate](19){} (8) 
-(5) to[fore, black,->, bend right={40.10704565915762}, ] node[coordinate](20){} (8) 
+(5) to[fore, black,->, curve={ratio=0.4}, ] node[coordinate](20){} (8) 
 (9) to[fore, black,->, cell=0.2, ] node[coordinate](21){} (11) 
 (17) to[fore, black,->, cell=0.2, ] node[coordinate](22){} (20) 
 ; 
 \path[->] 
-(0) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, bend right={-40.10704565915762}, ] (2) 
+(0) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, curve={ratio=-0.5}, ] (2) 
 (2) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, ] (1) 
-(0) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, bend right={34.37746770784939}, ] (2) 
-(0) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, bend right={17.1887338539247}, ] (3) 
-(3) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, bend right={11.459155902616464}, ] (1) 
+(0) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, curve={ratio=0.4}, ] (2) 
+(0) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, curve={ratio=0.30000000000000004}, ] (3) 
+(3) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, curve={ratio=0.2}, ] (1) 
 (2) edge["${\scriptstyle α'}$", pos=0.5, fore, black,->, cell=0.2, ] (3) 
 (5) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, ] (7) 
 (7) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, ] (6) 
-(5) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, bend right={-17.1887338539247}, ] (8) 
-(8) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, bend right={5.729577951308232}, ] (6) 
+(5) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, curve={ratio=-0.20000000000000004}, ] (8) 
+(8) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, curve={ratio=0.1}, ] (6) 
 (7) edge["${\scriptstyle α}$", pos=0.5, fore, black,->, cell=0.2, ] (8) 
-(5) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, bend right={40.10704565915762}, ] (8) 
+(5) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, curve={ratio=0.4}, ] (8) 
 (9) edge["${\scriptstyle γ}$", pos=0.5, fore, black,->, cell=0.2, ] (11) 
 (17) edge["${\scriptstyle γ}$", pos=0.5, fore, black,->, cell=0.2, ] (20) 
 ; 
