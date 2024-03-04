@@ -48,6 +48,10 @@
 \newcommand{\TL}[1]{\textcolor{blue}{\textbf{TL:} #1}\PackageWarning{todo}{todo}}
 \newcommand{\AL}[1]{\textcolor{blue}{\textbf{AL:} #1}\PackageWarning{todo}{todo}}
 
+\AtEndPreamble{
+\theoremstyle{acmdefinition}
+\newtheorem{remark}[theorem]{Remark}
+}
 %%
 %% end of the preamble, start of the body of the document source.
 \begin{document}

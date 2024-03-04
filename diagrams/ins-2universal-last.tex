@@ -1,0 +1,30 @@
+\begin{tikzpicture}[every node/.style={inner sep=2pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
+\node (0) at (13.095238095238095em, -5.9523809523809526em) {$X$} ; 
+\node (1) at (20.238095238095237em, -5.9523809523809526em) {$A$} ; 
+\node (2) at (17.857142857142858em, -5.9523809523809526em) {$I$} ; 
+\node (3) at (3.5714285714285716em, -5.9523809523809526em) {$X$} ; 
+\node (4) at (8.333333333333334em, -5.9523809523809526em) {$A$} ; 
+\node (5) at (10.714285714285714em, -5.9523809523809526em) {$=$} ; 
+\path 
+(0) to[fore, black,->, curve={ratio=-0.5}, ] node[coordinate](6){} (2) 
+(0) to[fore, black,->, curve={ratio=-0.7999999999999999}, ] node[coordinate](7){} (1) 
+(0) to[fore, black,->, curve={ratio=0.7999999999999999}, ] node[coordinate](8){} (1) 
+(2) to[fore, black,->, ] node[coordinate](9){} (1) 
+(0) to[fore, black,->, curve={ratio=0.4}, ] node[coordinate](10){} (2) 
+(3) to[fore, black,->, curve={ratio=-0.5}, ] node[coordinate](11){} (4) 
+(3) to[fore, black,->, curve={ratio=0.5}, ] node[coordinate](12){} (4) 
+(6) to[fore, black,->, cell=0.2, dashed, ] node[coordinate](13){} (10) 
+(11) to[fore, black,->, cell=0.2, ] node[coordinate](14){} (12) 
+; 
+\path[->] 
+(0) edge["${\scriptstyle \universalins{α}}$", pos=0.7, fore, black,->, curve={ratio=-0.5}, ] (2) 
+(0) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, curve={ratio=-0.7999999999999999}, ] (1) 
+(0) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, curve={ratio=0.7999999999999999}, ] (1) 
+(0) edge["${\scriptstyle \universalins{α'}}$"', pos=0.7999999999999999, fore, black,->, curve={ratio=0.4}, ] (2) 
+(3) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, curve={ratio=-0.5}, ] (4) 
+(3) edge["${\scriptstyle x'}$"', pos=0.5, fore, black,->, curve={ratio=0.5}, ] (4) 
+(6) edge["${\scriptstyle ∃!\universalins{γ}}$", pos=0.5, fore, black,->, cell=0.2, dashed, ] (10) 
+(11) edge["${\scriptstyle \gamma}$", pos=0.5, fore, black,->, cell=0.2, ] (12) 
+(2) edge["${\scriptstyle i}$", pos=0.5, fore, black,->, ] (1) 
+; 
+\end{tikzpicture}
