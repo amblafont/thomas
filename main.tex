@@ -48,6 +48,23 @@
 \newcommand{\TL}[1]{\textcolor{blue}{\textbf{TL:} #1}\PackageWarning{todo}{todo}}
 \newcommand{\AL}[1]{\textcolor{blue}{\textbf{AL:} #1}\PackageWarning{todo}{todo}}
 
+
+% Categories
+\DeclareMathOperator{\Set}{Set}
+% Categories IS
+\DeclareMathOperator{\Mon}{Mon}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Sig}{Sig}
+\DeclareMathOperator{\Model}{Model}
+% Categorical constructors
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Lan}{Lan}
+
+
+
+
+\newcommand{\mc}[1]{\mathcal{#1}}
+
 \AtEndPreamble{
 \theoremstyle{acmdefinition}
 \newtheorem{remark}[theorem]{Remark}
@@ -156,6 +173,7 @@
 \subimport{sections/}{inserters.tex}
 \subimport{sections/}{vertical-inserters.tex}
 \subimport{sections/}{inserters-retour.tex}
+\subimport{sections/}{theorem.tex}
 \subimport{sections/}{application_translation.tex}
 \subimport{sections/}{application_adjunction.tex}
 \subimport{sections/}{application_equivalence.tex}
