@@ -1,0 +1,32 @@
+\begin{tikzpicture}[every node/.style={inner sep=2pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
+\node (0) at (3.8095238095238093em, -3.8095238095238093em) {$A$} ; 
+\node (1) at (11.428571428571429em, -3.8095238095238093em) {$B$} ; 
+\node (2) at (11.428571428571429em, -11.428571428571429em) {$B'$} ; 
+\node (3) at (3.8095238095238093em, -11.428571428571429em) {$A'$} ; 
+\node (4) at (19.047619047619047em, -3.8095238095238093em) {$C$} ; 
+\node (5) at (19.047619047619047em, -11.428571428571429em) {$C'$} ; 
+\path 
+(0) to[fore, black,->, curve={ratio=-0.1}, ] node[coordinate](6){} (1) 
+(0) to[fore, black,->, curve={ratio=0.1}, ] node[coordinate](7){} (1) 
+(1) to[fore, black,->, ] node[coordinate](8){} (2) 
+(0) to[fore, black,->, ] node[coordinate](9){} (3) 
+(3) to[fore, black,->, curve={ratio=-0.1}, ] node[coordinate](10){} (2) 
+(3) to[fore, black,->, curve={ratio=0.1}, ] node[coordinate](11){} (2) 
+(1) to[fore, black,->, ] node[coordinate](12){} (4) 
+(2) to[fore, black,->, ] node[coordinate](13){} (5) 
+(4) to[fore, black,->, ] node[coordinate](14){} (5) 
+(9) to[fore, black,->, cell=0.2, curve={ratio=-0.1}, ] node[coordinate](15){} (8) 
+; 
+\path[->] 
+(0) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, curve={ratio=-0.1}, ] (1) 
+(0) edge["${\scriptstyle G}$"', pos=0.5, fore, black,->, curve={ratio=0.1}, ] (1) 
+(1) edge["${\scriptstyle H_B}$", pos=0.5, fore, black,->, ] (2) 
+(0) edge["${\scriptstyle H_A}$"', pos=0.5, fore, black,->, ] (3) 
+(3) edge["${\scriptstyle F'}$", pos=0.5, fore, black,->, curve={ratio=-0.1}, ] (2) 
+(3) edge["${\scriptstyle G'}$"', pos=0.5, fore, black,->, curve={ratio=0.1}, ] (2) 
+(1) edge["${\scriptstyle p}$", pos=0.5, fore, black,->, ] (4) 
+(2) edge["${\scriptstyle p'}$"', pos=0.5, fore, black,->, ] (5) 
+(4) edge["${\scriptstyle H_C}$", pos=0.5, fore, black,->, ] (5) 
+(9) edge["${\scriptstyle h_F}$", pos=0.5, fore, black,->, cell=0.2, curve={ratio=-0.1}, ] (8) 
+; 
+\end{tikzpicture}

@@ -1,0 +1,64 @@
+\begin{tikzpicture}[every node/.style={inner sep=2pt,outer sep=0pt,anchor=base,text height=1.2ex, text depth=0.25ex}] 
+\node (0) at (20.476213977450417em, -0.7994464692615327em) {(naturalite de la transfo lax)} ; 
+\node (1) at (10em, -10em) {$X$} ; 
+\node (2) at (16.666666666666668em, -3.3333333333333335em) {$A$} ; 
+\node (3) at (23.333333333333332em, -10em) {$B$} ; 
+\node (4) at (16.666666666666668em, -10em) {$A$} ; 
+\node (5) at (10em, -16.666666666666668em) {$X'$} ; 
+\node (6) at (16.666666666666668em, -16.666666666666668em) {$A'$} ; 
+\node (7) at (23.333333333333332em, -16.666666666666668em) {$B'$} ; 
+\node (8) at (30em, -3.3333333333333335em) {$X$} ; 
+\node (9) at (36.666666666666664em, -3.3333333333333335em) {$A$} ; 
+\node (10) at (43.333333333333336em, -3.3333333333333335em) {$B$} ; 
+\node (11) at (43.333333333333336em, -10em) {$B'$} ; 
+\node (12) at (36.666666666666664em, -10em) {$A'$} ; 
+\node (13) at (30em, -10em) {$X'$} ; 
+\node (14) at (36.666666666666664em, -16.666666666666668em) {$A'$} ; 
+\node (15) at (26.666690167926607em, -10em) {$=$} ; 
+\path 
+(1) to[fore, black,->, curve={ratio=-0.30000000000000004}, ] node[coordinate](16){} (2) 
+(2) to[fore, black,->, curve={ratio=-0.30000000000000004}, ] node[coordinate](17){} (3) 
+(1) to[fore, black,->, ] node[coordinate](18){} (4) 
+(4) to[fore, black,->, ] node[coordinate](19){} (3) 
+(4) to[fore, black,->, cell=0.2, ] node[coordinate](20){} (2) 
+(1) to[fore, black,->, ] node[coordinate](21){} (5) 
+(4) to[fore, black,->, ] node[coordinate](22){} (6) 
+(5) to[fore, black,->, ] node[coordinate](23){} (6) 
+(3) to[fore, black,->, ] node[coordinate](24){} (7) 
+(6) to[fore, black,->, ] node[coordinate](25){} (7) 
+(8) to[fore, black,->, ] node[coordinate](26){} (9) 
+(9) to[fore, black,->, ] node[coordinate](27){} (10) 
+(10) to[fore, black,->, ] node[coordinate](28){} (11) 
+(9) to[fore, black,->, ] node[coordinate](29){} (12) 
+(12) to[fore, black,->, ] node[coordinate](30){} (11) 
+(8) to[fore, black,->, ] node[coordinate](31){} (13) 
+(13) to[fore, black,->, ] node[coordinate](32){} (12) 
+(13) to[fore, black,->, curve={ratio=0.2}, ] node[coordinate](33){} (14) 
+(14) to[fore, black,->, curve={ratio=0.2}, ] node[coordinate](34){} (11) 
+(14) to[fore, black,->, cell=0.2, ] node[coordinate](35){} (12) 
+(25) to[fore, black,->, cell=0.2, ] node[coordinate](36){} (19) 
+; 
+\path[->] 
+(1) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, curve={ratio=-0.30000000000000004}, ] (2) 
+(2) edge["${\scriptstyle G}$", pos=0.5, fore, black,->, curve={ratio=-0.30000000000000004}, ] (3) 
+(1) edge["${\scriptstyle x}$"', pos=0.5, fore, black,->, ] (4) 
+(4) edge["${\scriptstyle F}$", pos=0.5, fore, black,->, ] (3) 
+(4) edge["${\scriptstyle \alpha}$"', pos=0.5, fore, black,->, cell=0.2, ] (2) 
+(1) edge["${\scriptstyle H_X}$"', pos=0.5, fore, black,->, ] (5) 
+(4) edge["${\scriptstyle H_A}$", pos=0.5, fore, black,->, ] (6) 
+(5) edge["${\scriptstyle x'}$", pos=0.5, fore, black,->, ] (6) 
+(3) edge["${\scriptstyle H_B}$", pos=0.5, fore, black,->, ] (7) 
+(6) edge["${\scriptstyle F'}$"', pos=0.5, fore, black,->, ] (7) 
+(8) edge["${\scriptstyle x}$", pos=0.5, fore, black,->, ] (9) 
+(9) edge["${\scriptstyle G}$", pos=0.5, fore, black,->, ] (10) 
+(10) edge["${\scriptstyle H_B}$", pos=0.5, fore, black,->, ] (11) 
+(9) edge["${\scriptstyle H_A}$", pos=0.5, fore, black,->, ] (12) 
+(12) edge["${\scriptstyle G'}$", pos=0.5, fore, black,->, ] (11) 
+(8) edge["${\scriptstyle H_X}$", pos=0.5, fore, black,->, ] (13) 
+(13) edge["${\scriptstyle x'}$", pos=0.5, fore, black,->, ] (12) 
+(13) edge["${\scriptstyle x'}$", pos=0.5, fore, black,->, curve={ratio=0.2}, ] (14) 
+(14) edge["${\scriptstyle F'}$"', pos=0.5, fore, black,->, curve={ratio=0.2}, ] (11) 
+(14) edge["${\scriptstyle \alpha'}$", pos=0.5, fore, black,->, cell=0.2, ] (12) 
+(25) edge["${\scriptstyle h_F}$", pos=0.5, fore, black,->, cell=0.2, ] (19) 
+; 
+\end{tikzpicture}

@@ -1,0 +1,146 @@
+\section{Vertical Inserters}
+
+\todot{Cette section devrait remplacer celle sur les inserters. En fait non! Cf la simplification dans la section suivante}
+L'idee de cette section c'etait de montrer qu'on a une split 2-opfibration entre les cones et les diagrammes.
+$  \VInsCone \rightarrow \VInsDiag$. Et de tirer parti du lemme suivant:
+\begin{lemma}
+  \label{lem:twofib-section}
+  Given a split 2-fibration, if each fiber 2-category has a 1-initial object, 
+  then the fibration has a (unique?) section (as a 2-functor) selecting each initial object.
+\end{lemma}
+\begin{remark}
+  C'est assez etonnant que la propriete universelle 1-categorique suffise a induire un 2-foncteur.
+\end{remark}
+Et ensuite du coup on compose la section $\VInsDiag → \VInsCone$ avec $\VInsCone → Cat$.
+
+\begin{definition}
+  We define a 2-category $\VInsDiag$ of vertical inserter diagrams (abbreviated as
+  vins-diagrams) which is a wide, locally full sub 2-category 
+  of the 2-category of functors from 
+  $\begin{tikzcd}
+   ⋅ \doublerightarrow{r}{}{}& ⋅ \ar[r] & ⋅  
+  \end{tikzcd}
+  $
+  to $\Cat$, lax natural transformations and modifications~\cite{twodimcat}.
+   An object is given by a diagram of three functors 
+   $
+   \begin{tikzcd}
+   A \doublerightarrow{r}{F}{G} & B \ar[r,"p"] & C.
+   \end{tikzcd}
+   $
+   A 1-cell between $(F,G,p)$ and $(F',G',p')$ is given 
+   by three functors $(A \xrightarrow{H_A} A', B\xrightarrow{H_B} B', C\xrightarrow{H_C} C')$ such that 
+   $H_C 	
+   ∘
+   p = p' 	
+   ∘
+    H_B$ and $H_B ∘ G = G' ∘ H_A$, together with
+   a natural transformation 
+   $  F' H_A \xrightarrow{h_F}  H_BF$ 
+   as summarised in the following diagram
+   \[
+   % YADE DIAGRAM diagrams/vins-diag-1-cell.json
+% GENERATED LATEX
+\input{../diagrams/vins-diag-1-cell.tex}
+% END OF GENERATED LATEX
+\]
+% En termes de string diagram (bottom up, left right)
+% h_F 
+%   F  H_B
+%   H_A F'
+
+% h_G 
+%   H_A G'
+%   G H_B
+
+%h_p est une egalite
+A 2-cell between $(H_A, H_B, H_C, h_F)$ and
+$(H_A', H_B', H_C', h_F')$ is given by three natural transformations
+$(
+  H_A \xrightarrow{h_A}H_A,
+  H_B \xrightarrow{h_B}H_B,
+  H_C \xrightarrow{h_C}H_C
+)$ such that the following equalities hold:
+\[
+% YADE DIAGRAM diagrams/vins-2cell.json  
+% GENERATED LATEX
+\input{../diagrams/vins-2cell.tex}
+% END OF GENERATED LATEX
+\]
+
+\end{definition}
+\begin{definition}
+  We define a 2-category $\VInsCone$ of vertical inserter cones (abbreviated as
+  vins-cones) which is a wide, locally full sub 2-category 
+  of the 2-category of functors from 
+  
+  $
+  % YADE DIAGRAM diagrams/vins-cone-shape.json
+% GENERATED LATEX
+\input{../diagrams/vins-cone-shape.tex},
+% END OF GENERATED LATEX
+  $
+  where $p ⋅ α$ is an identity 2-cell, 
+  to $\Cat$, lax natural transformations and modifications.
+   An object is given by a vertical inserter diagram 
+   $
+   \begin{tikzcd}
+   A \doublerightarrow{r}{F}{G} & B \ar[r,"p"] & C
+   \end{tikzcd}
+   $
+   and a \emph{cone} over it, that is:
+   \begin{itemize}
+    \item a category $X$;
+    \item a functor $X \xrightarrow{x}A$;
+    \item a natural transformation  $ F · x \xrightarrow{α} G · x$ such that 
+     $p ⋅ α$ is an identity natural transformation
+     (which entails that $p∘ F∘ x = p ∘ G ∘ x$).
+   \end{itemize}
+   A 1-cell between $(F,G,p,α)$ and $(F',G',p',α')$ is given 
+   by a 1-cell $(H_A,H_B,H_C,h_F)$ between 
+   the underlying vins-diagrams and a functor 
+   $X\xrightarrow{H_X} X'$ such that 
+   $H_X ∘ x' = x ∘ H_A$.
+   as summarised in the following diagram, and additionaly such that 
+   Equation~\eqref{eq:vins-mor-cones} holds.
+   \todot{Il doit manquer des conditions 
+   relatives au fait que $p⋅ α $ est une identite}.
+   \[
+   % YADE DIAGRAM diagrams/vins-1-cell.json
+% GENERATED LATEX
+\input{../diagrams/vins-1-cell.tex}
+% END OF GENERATED LATEX
+\]
+\begin{equation}
+  \label{eq:vins-mor-cones}
+  % YADE DIAGRAM diagrams/vins-cone-1-cell-compat.json
+% GENERATED LATEX
+\input{../diagrams/vins-cone-1-cell-compat.tex}
+% END OF GENERATED LATEX
+\end{equation}
+% En termes de string diagram (bottom up, left right)
+% h_F 
+%   F  H_B
+%   H_A F'
+
+% h_G 
+%   H_A G'
+%   G H_B
+
+%h_p est une egalite
+A 2-cell between $(H_X,H_A, H_B, H_C, h_F)$ and
+$(H_X',H_A', H_B', H_C', h_F')$ is given
+by a 2-cell $(h_A,h_B,h_C)$ in $\VInsDiag$ and a natural transformation
+$H_X \xrightarrow{h_X} H_X'$ such that
+ such that the following equalities hold:
+\[
+% YADE DIAGRAM diagrams/vins-cone-2cell.json  
+% GENERATED LATEX
+\input{../diagrams/vins-cone-2cell.tex}
+% END OF GENERATED LATEX
+\]
+\end{definition}
+\cite{bird1989flexible}
+%%% Local Variables:
+%%% TeX-master: "../main.tex"
+%%% End:

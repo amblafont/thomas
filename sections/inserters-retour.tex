@@ -1,0 +1,20 @@
+\section{Inserters: le retour}
+Ce que je vais dire ce generalise sans pb a n'importe quelle 2-cat avec pullback.
+En fait la l'idee c'est de dire que $\Cat^\rightarrow \xrightarrow{cod} \Cat$
+est une 2-bifibration, avec le pullback donne par le pullback. Consequence: 
+un inserter dans une 2-cat fibre (qui est donc un inserter vertical) est aussi un 
+inserter dans $\Cat^→$ (par une generalisation 2-categorique de \cite[Corollary 4.3]{grayfib}).
+Du coup, il suffit de montrer que les limites calculees pointwise se relevent en un 2-foncteur:
+\begin{lemma}
+    If $A \xrightarrow{P} \VInsDiag$ (cf la section inserter vertical pour la def
+    de $\VInsDiag$, a la difference qu'on enleve la partie verticale, et on peut remplacer $\Cat$ par n'importe quel 2-cat) is a 2-functor such that
+    $P(a)$ has an inserter $L(a)$, then $L$ uniquely lifts to a 2-functor $A \rightarrow E$
+\end{lemma}
+Pour faire la preuve de ca, on fait comme decrit dans la section sur les inserters verticaux (en enlevant la partie verticale).
+Mais la difference, c'est qu'on va faire a la fin  le pullback de 
+la 2-opfibration $\VInsCone → \VInsDiag$ le long de $A \rightarrow \VInsDiag $
+avant d'appliquer le lemme \ref{lem:twofib-section}.
+
+%%% Local Variables:
+%%% TeX-master: "../main.tex"
+%%% End:
