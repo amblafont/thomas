@@ -1,21 +1,52 @@
 \section{Application: Translation across simply-typed systems}
 
-% The limitation of the recursion principle
-Initial semantics represent higher-order languages
-% with their substitution structure
-as initial models over a base category that depends on the type system of
-the language considered.
-For instance, a simply-typed language with a set of types $T$ can be
-represented as an initial model over the category $[\Set^T,\Set^T]$.
+%%% The limitation of the recursion principle
+Initial semantics represent higher-order languages as initial models over a
+base category that depends on the type system of the language considered.
+For instance, a simply-typed language can be represented as an initial model
+over the category $[\Set^T,\Set^T]$, where $T$ is the initial $S$-algebra
+representing the typing systems.
 This is perfectly sensible, yet it limits the recursion principle provided
 by initiality, as by definition it is confined to model over the same base
 category.
-Consequently, the recursion principle provided by initiality do
-not directly enable us to relate two languages with different type
+It does not directly enable us to relate two languages with different type
 systems $T$ and $T'$ as their models live above different categories
 $[\Set^T,\Set^T]$ and $[\Set^{T'},\Set^{T'}]$.
+This issue is not surprising as a translation of simply-typed languages
+should first rely on a translation of typing systems $g : T \to T'$,
+which is not accounted by initiality.
 
-\vspace{3cm}
+%%% Benedikt
+% headline
+\todot{A possible solution} to this issue was investigated by Ahrens
+\cite{ExtendedInitiality12} by integrating the type system directly in
+the framework.
+%
+Most importantly, in the framework, Ahrens replaced the category of monads
+over the intial $S$-algebra $\Mon([\Set^{T},\Set^{T}])$ by the total
+category of monads over the $S$-algebras\footnote{
+  Actually, Ahrens used by a category trivially equivalent to this total category called $S$-monads.}:
+%
+\[\int_{K : S-\mathrm{Alg}} \Mon([\Set^K,\Set^K]) \]
+%
+Its objects are pairs $(K,M)$ where $K$ is a $S$-algebra representing the
+type system and $M$ a monad over $[\Set^{K},\Set^{K}]$.
+% Morphism
+Its morphisms $(K,M) \to (K',M')$ are pairs $(g,f)$ where $g : K \to K'$ is
+a morphism of $S$-algebra translating the type systems, and $f : M \to \bar{g}M'$
+a morphism of monads translating terms after retying.
+% Conclusion
+Building an initial model using the total category enabled him to provide a
+stronger recursion principle as the translation of type systems is directly
+accounted for.
+% Downsides
+\todot{Downsides}
+
+
+
+
+
+
 
 % Attempted by Benedikt
 There has been attempted to go around this issue by Ahrens \cite{ExtendedInitiality12}.
@@ -26,15 +57,16 @@ unclear whether it can be extended to more advanced languages.
 
 
 % Attempted by me and Benedikt
-An attempted has been presented in \cite{IntroductionIS24} that is low level.
+An attempted has been presented in \cite{IntroductionIS24} that is low level
+but fails to provide a general result.
 
 We pursue this approach and show that the metatheory presented in
 \todot{cref} can be leverage to entend the recursion principle to
-translating languages with different type systems, and that is enables us to
-recover a stronger result then \cite{ExtendedInitiality12}.
+translating simply-type languages with different type systems, and that is
+enables us to recover a stronger result then \cite{ExtendedInitiality12}.
 
 
-\subsection{pqst}
+\subsection{Old stuff}
 Asume given a translation of typing systems $T \to T'$.
 % Outline
 To translate monoids from $[\Set^{T'},\Set^{T'}]$ to $[\Set^T,\Set^T]$,
@@ -79,22 +111,6 @@ This adjunction can be lifted to the endofunctors categories:
   := \eta$ and $G_2 : l \circ X_B \circ k \circ l \circ X_B' \circ k \to l
   \circ X_B \circ X_B' \circ k := l \circ X_B \circ \epsilon \circ X_B'\circ
   k$.
-\end{proposition}
-
-% Monoidal functor
-\noindent Importantly, the adjunction on endofunctors categories provides
-us with a monoidal functor $G : [\Set^{T'},\Set^{T'}] \to [\Set^T,\Set^T]$
-that enables us to translate monoids:
-% On monoids
-
-\begin{proposition}
-  \label{prop:functorial-monoids}
-  Every monoidal functor $(F,F_0,F_2) : (\mc{C},I,\otimes) \to
-  (\mc{D},J,\bullet)$ entails a functor on monoids $\Mon(\mc{C}) \to
-  \Mon(\mc{D})$.
-  It associates to any monoid $(R,\eta,\mu) : \Mon(\mc{C})$ the monoid
-  $(F(R),F(\eta) \circ F_0,F(\mu) \circ F_2) : \Mon(\mc{D})$, and to any
-  morphism of monoid $f : R \to R'$, the morphism $F(f) : F(R) \to F(R')$.
 \end{proposition}
 
 Hence, by theorem, to translate between this and this, it suffices to exhib this...
