@@ -84,11 +84,6 @@ Furthermore, the endofunctors categories $[\Set^K,\Set^K]$ are now fully hardcod
 in the framework, whereas before it could take any fitting monoidal category as input
 enabling to represent different kind of languages by changing the input category.
 
-
-
-
-
-
 \todot{Attempted by me and Benedikt} \\
 An attempted has been presented in \cite{IntroductionIS24} that is low level
 but fails to provide a general result.
@@ -98,58 +93,6 @@ We pursue this approach and show that the metatheory presented in
 \todot{cref} can be leverage to entend the recursion principle to
 translating simply-type languages with different type systems, and that is
 enables us to recover a stronger result then \cite{ExtendedInitiality12}.
-
-
-\subsection{Old stuff}
-Asume given a translation of typing systems $T \to T'$.
-% Outline
-To translate monoids from $[\Set^{T'},\Set^{T'}]$ to $[\Set^T,\Set^T]$,
-we start by translating contexts and endofunctors.
-% LKE + g
-$g$ admits a global left Kan extension, denoted
-$\vec{g} := \Lan{g}{\_}$, that computes as below.
-It entails an adjunction on contexts, i.e. between $\Set^T$ and $\Set^{T'}$:
-%
-\begin{align*}
-  \begin{tikzcd}[ampersand replacement = \&, column sep=large]
-      \Set^T
-          \ar[r, bend left, "\vec{g}"]
-          \ar[r, phantom, "\perp"]
-        \& \Set^{T'} \ar[l, bend left, "g^*"]
-  \end{tikzcd}
-  &&
-  \vec{g}(\Gamma)(t') \;:= \bigsqcup_{\substack{t : T \\ g(t) = t'}} \Gamma(t)
-\end{align*}
-%
-This adjunction can be lifted to the endofunctors categories:
-
-\begin{proposition}
-  Given an adjunction $A \to B : k \vdash l : B \to A$ with unit $\eta : \Id
-  \to l \circ k$ and counit $\epsilon : k \circ l \to \Id$, there is an
-  adjunction on endofunctor categories:
-  \begin{align*}
-    \begin{tikzcd}[ampersand replacement = \&, column sep=large]
-      A \ar[r, bend left, "k"]
-                \ar[r, phantom, "\perp"]
-        \& B \ar[l, bend left, "l"]
-    \end{tikzcd}
-    &&
-    \begin{tikzcd}[ampersand replacement = \&, column sep=large]
-        {[}A{,}A{]} \ar[r, bend left, "X_A \;\mapsto\; k \circ X_A \circ l"]
-                  \ar[r, phantom, "\perp"]
-          \& {[}B{,}B{]} \ar[l, bend left, "X_B \;\mapsto\; l \circ X_B \circ k"]
-    \end{tikzcd}
-  \end{align*}
-  Moreover, the functor $G := X_B \;\mapsto\; l \circ X_B \circ k$ is
-  \hyperref[def:monoidal-functor]{monoidal}, with $G_0 : \Id \to l \circ k
-  := \eta$ and $G_2 : l \circ X_B \circ k \circ l \circ X_B' \circ k \to l
-  \circ X_B \circ X_B' \circ k := l \circ X_B \circ \epsilon \circ X_B'\circ
-  k$.
-\end{proposition}
-
-Hence, by theorem, to translate between this and this, it suffices to exhib this...
-
-
 
 \subsection{Small Functors}
 \todoLipsum{1}
