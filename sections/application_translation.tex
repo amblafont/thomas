@@ -12,54 +12,88 @@ category.
 It does not directly enable us to relate two languages with different type
 systems $T$ and $T'$ as their models live above different categories
 $[\Set^T,\Set^T]$ and $[\Set^{T'},\Set^{T'}]$.
+
 This issue is not surprising as a translation of simply-typed languages
 should first rely on a translation of typing systems $g : T \to T'$,
 which is not accounted by initiality.
+Actually, such a translation $g : T \to T'$ naturally acts on the underlying
+categories:
 
-%%% Benedikt
+\begin{proposition}
+  \label{prop:adj-type}
+  Given a morphism $g : T \to T'$, as both $T$ and $T'$ are small, $g$ admits left Kan extensions
+  $\vec{g} := \Lan_g(\_) : \Set^T \to \Set^{T'}$
+  defined by $\vec{g}(\Gamma)(t') := \bigsqcup_{t : T,\; g(t) = t'} \Gamma(t)$
+  and denoted the retyping functor.
+  Moreover, it is part of an adjunction between $\Set^T$ and $\Set^{T'}$,
+  which in turn induces an adjunction on the endofunctors categories such
+  that the functor $\overline{g} : [\Set^T,\Set^T] \to [\Set^{T'},\Set^{T'}]$
+  is a monoidal.
+  %
+  \begin{align*}
+    \begin{tikzcd}[ampersand replacement = \&, column sep=large]
+      \Set^T \ar[r, bend left, "\vec{g}"] \ar[r, phantom, "\perp"]
+        \& \Set^{T'} \ar[l, bend left, "g^*"]
+    \end{tikzcd}
+    &&
+    \begin{tikzcd}[ampersand replacement = \&, column sep=large]
+      {[}\Set^T{,}\Set^T{]} \ar[r, bend left, "\underline{g}(X_T) \;:=\; \vec{g} \circ X_T \circ g^*"]
+                \ar[r, phantom, "\perp"]
+        \& {[}\Set^{T'}{,}\Set^{T'}{]} \ar[l, bend left, "\overline{g}(X_{T'}) \,:=\, g^* \circ X_{T'} \circ \vec{g}"]
+    \end{tikzcd}
+  \end{align*}
+\end{proposition}
+
 % headline
-\todot{A possible solution} to this issue was investigated by Ahrens
-\cite{ExtendedInitiality12} by integrating the type system directly in
-the framework.
-%
-Most importantly, in the framework, Ahrens replaced the category of monads
-over the intial $S$-algebra $\Mon([\Set^{T},\Set^{T}])$ by the total
-category of monads over the $S$-algebras\footnote{
-  Actually, Ahrens used by a category trivially equivalent to this total category called $S$-monads.}:
+A first solution to this issue was investigated by Ahrens \cite{ExtendedInitiality12}
+by integrated the type system directly into the framework.
+% How to
+Throughout the framework, Ahrens replaced the category of monads over the
+initial $S$-algebra $\Mon([\Set^{T},\Set^{T}])$ by the total category of
+monads over the $S$-algebras\footnote{
+  Actually, Ahrens used a category directly equivalent to this total
+  category called $S$-monads.}:
 %
 \[\int_{K : S-\mathrm{Alg}} \Mon([\Set^K,\Set^K]) \]
 %
-Its objects are pairs $(K,M)$ where $K$ is a $S$-algebra representing the
-type system and $M$ a monad over $[\Set^{K},\Set^{K}]$.
+% Objects
+The objects of this category are pairs $(K,M)$ where $K$ is a $S$-algebra
+representing a type system admitting a $S$-structure, and $M$ a monad over
+$[\Set^{K},\Set^{K}]$ representing terms over $K$.
+This accounts for much more languages as we are no longer restricted to
+languages with type system $T$, we are allowed any languages with a type
+system admitting a $S$-structure.
 % Morphism
-Its morphisms $(K,M) \to (K',M')$ are pairs $(g,f)$ where $g : K \to K'$ is
-a morphism of $S$-algebra translating the type systems, and $f : M \to \bar{g}M'$
-a morphism of monads translating terms after retying.
-% Conclusion
-Building an initial model using the total category enabled him to provide a
-stronger recursion principle as the translation of type systems is directly
-accounted for.
+Morphisms $(K,M) \to (K',M')$ are then pairs $(g,f)$ where $g : K \to K'$ is
+a morphism of $S$-algebra translating the type systems, and $f : M \to \overline{g}M'$
+a morphism of monads\footnote{
+  By \cref{prop:adj-type}, the functor $\overline{g} : [\Set^K,\Set^K] \to [\Set^{K'},\Set^{K'}]$
+  associated to $g$ is monoidal, and hence generates a functor
+  $\overline{g} : \Mon([\Set^K,\Set^K]) \to \Mon([\Set^{K'},\Set^{K'}])$.
+}
+translating terms after retying.
+% Why it works
+Using the total category then provides us a stronger recursion principle as
+there is automatically a unique translation of languages from the initial model
+to any other langages with a $\Sigma$-structure and a type system admitting a $S$-structure.
+Moreover, unfolding the definition provides exactly the translation one would expect.
 % Downsides
-\todot{Downsides}
+While this approach technically works, this is at the cost of technical modifications
+to the entire framework in particular to signatures.
+Furthermore, the endofunctors categories $[\Set^K,\Set^K]$ are now fully hardcoded
+in the framework, whereas before it could take any fitting monoidal category as input
+enabling to represent different kind of languages by changing the input category.
 
 
 
 
 
 
-
-% Attempted by Benedikt
-There has been attempted to go around this issue by Ahrens \cite{ExtendedInitiality12}.
-However, to do so he had to modify the entire framework, and in particular
-the definition of models.
-Moreover, his presentation is specific to simply-typed languages, and it is
-unclear whether it can be extended to more advanced languages.
-
-
-% Attempted by me and Benedikt
+\todot{Attempted by me and Benedikt} \\
 An attempted has been presented in \cite{IntroductionIS24} that is low level
 but fails to provide a general result.
 
+\todot{Us}
 We pursue this approach and show that the metatheory presented in
 \todot{cref} can be leverage to entend the recursion principle to
 translating simply-type languages with different type systems, and that is
