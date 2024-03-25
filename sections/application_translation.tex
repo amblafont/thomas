@@ -14,20 +14,20 @@ systems $T$ and $T'$ as their models live above different categories
 $[\Set^T,\Set^T]$ and $[\Set^{T'},\Set^{T'}]$.
 
 This issue is not surprising as a translation of simply-typed languages
-should first rely on a translation of typing systems $g : T \to T'$,
+should first rely on a translation of typing systems $g : T → T'$,
 which is not accounted by initiality.
-Actually, such a translation $g : T \to T'$ naturally acts on the underlying
+Actually, such a translation $g : T → T'$ naturally acts on the underlying
 categories:
 
 \begin{proposition}
   \label{prop:adj-type}
-  Given a morphism $g : T \to T'$, as both $T$ and $T'$ are small, $g$ admits left Kan extensions
-  $\vec{g} := \Lan_g(\_) : \Set^T \to \Set^{T'}$
-  defined by $\vec{g}(\Gamma)(t') := \bigsqcup_{t : T,\; g(t) = t'} \Gamma(t)$
+  Given a morphism $g : T → T'$, as both $T$ and $T'$ are small, $g$ admits left Kan extensions
+  $\vec{g} := \Lan_g(\_) : \Set^T → \Set^{T'}$
+  defined by $\vec{g}(Γ)(t') := \bigsqcup_{t : T,\; g(t) = t'} Γ(t)$
   and denoted the retyping functor.
   Moreover, it is part of an adjunction between $\Set^T$ and $\Set^{T'}$,
   which in turn induces an adjunction on the endofunctors categories such
-  that the functor $\overline{g} : [\Set^T,\Set^T] \to [\Set^{T'},\Set^{T'}]$
+  that the functor $\overline{g} : [\Set^T,\Set^T] → [\Set^{T'},\Set^{T'}]$
   is a monoidal.
   %
   \begin{align*}
@@ -37,9 +37,9 @@ categories:
     \end{tikzcd}
     &&
     \begin{tikzcd}[ampersand replacement = \&, column sep=large]
-      {[}\Set^T{,}\Set^T{]} \ar[r, bend left, "\underline{g}(X_T) \;:=\; \vec{g} \circ X_T \circ g^*"]
+      {[}\Set^T{,}\Set^T{]} \ar[r, bend left, "\underline{g}(X_T) \;:=\; \vec{g} ∘ X_T ∘ g^*"]
                 \ar[r, phantom, "\perp"]
-        \& {[}\Set^{T'}{,}\Set^{T'}{]} \ar[l, bend left, "\overline{g}(X_{T'}) \,:=\, g^* \circ X_{T'} \circ \vec{g}"]
+        \& {[}\Set^{T'}{,}\Set^{T'}{]} \ar[l, bend left, "\overline{g}(X_{T'}) \,:=\, g^* ∘ X_{T'} ∘ \vec{g}"]
     \end{tikzcd}
   \end{align*}
 \end{proposition}
@@ -64,12 +64,12 @@ This accounts for much more languages as we are no longer restricted to
 languages with type system $T$, we are allowed any languages with a type
 system admitting a $S$-structure.
 % Morphism
-Morphisms $(K,M) \to (K',M')$ are then pairs $(g,f)$ where $g : K \to K'$ is
-a morphism of $S$-algebra translating the type systems, and $f : M \to \overline{g}M'$
+Morphisms $(K,M) → (K',M')$ are then pairs $(g,f)$ where $g : K → K'$ is
+a morphism of $S$-algebra translating the type systems, and $f : M → \overline{g}M'$
 a morphism of monads\footnote{
-  By \cref{prop:adj-type}, the functor $\overline{g} : [\Set^K,\Set^K] \to [\Set^{K'},\Set^{K'}]$
+  By \cref{prop:adj-type}, the functor $\overline{g} : [\Set^K,\Set^K] → [\Set^{K'},\Set^{K'}]$
   associated to $g$ is monoidal, and hence generates a functor
-  $\overline{g} : \Mon([\Set^K,\Set^K]) \to \Mon([\Set^{K'},\Set^{K'}])$.
+  $\overline{g} : \Mon([\Set^K,\Set^K]) → \Mon([\Set^{K'},\Set^{K'}])$.
 }
 translating terms after retying.
 % Why it works

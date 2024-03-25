@@ -4,77 +4,77 @@
 until you integrate it in your part} \\
 
 \noindent In this section, we assume given two monoidal categories
-$(A,\otimes,I)$ and $(B,\cdot,J)$.
+$(A,⊗,I)$ and $(B,\bullet,J)$.
 
 \subsection{Lemma}
 
 \begin{lemma}
-  A monoidal functor $F : A \to B$ induces a functor $F : \Mon(A) \to \Mon(B)$.
+  A monoidal functor $F : A → B$ induces a functor $F : \Mon(A) → \Mon(B)$.
 \end{lemma}
 
 \begin{lemma}
-  If $F : A \to B$ is strong and fully faithful, then the induced functor $F
-  : \Mon(A) \to \Mon(B)$ is fully faithful
+  If $F : A → B$ is strong and fully faithful, then the induced functor $F
+  : \Mon(A) → \Mon(B)$ is fully faithful
 \end{lemma}
 
 \begin{lemma}
-  A monoidal functor $F : A \to B$ induces a functor on the total categories
+  A monoidal functor $F : A → B$ induces a functor on the total categories
   of module
   %
-  \[ F : \int_{M:\Mon(A)} \Mod(M) \to \int_{M:\Mon(B)} \Mod(M) \]
+  \[ F : \int_{M:\Mon(A)} \Mod(M) → \int_{M:\Mon(B)} \Mod(M) \]
 \end{lemma}
 
 \begin{lemma}
-  If $F : A \to B$ is strong and fully faithful, then the induced functor
-  $F : \int_{M:\Mon(A)} \Mod(M) \to \int_{M:\Mon(B)} \Mod(M)$ is fully faithful.
+  If $F : A → B$ is strong and fully faithful, then the induced functor
+  $F : \int_{M:\Mon(A)} \Mod(M) → \int_{M:\Mon(B)} \Mod(M)$ is fully faithful.
 \end{lemma}
 
 \subsection{Functor}
 \begin{theorem}[Lifting Functors]
   \label{thm:fct-models}
-  Let $F : A \to B$ be a monoidal functor, $\Sigma_A : \Sig(A)$ and
-  $\Sigma_B : \Sig(B)$ two signatures such that there is a natural
-  transformation $\alpha : \Sigma_B F \to F \Sigma_A$ with $\pi_1 \circ
-  \alpha = \Id_{\Mon(B)}$, then, there is a functor
+  Let $F : A → B$ be a monoidal functor, $Σ_A : \Sig(A)$ and
+  $Σ_B : \Sig(B)$ two signatures such that there is a natural
+  transformation $α : Σ_B F → F Σ_A$ with $π_1 \circ
+  α = \Id_{\Mon(B)}$, then, there is a functor
   %
-  \[ F : \Model(\Sigma_A) \to \Model(\Sigma_B) \]
+  \[ F : \Model(Σ_A) → \Model(Σ_B) \]
 \end{theorem}
 
 \begin{theorem}{Faithfulness}
-  Moreover, if $F : A \to B$ is strong and fully faithful, then so is the
-  functor $F : \Model(\Sigma_A) \to \Model(\Sigma_B)$.
+  Moreover, if $F : A → B$ is strong and fully faithful, then so is the
+  functor $F : \Model(Σ_A) → \Model(Σ_B)$.
 \end{theorem}
 
 \subsection{Adjunction}
 \begin{theorem}[Lifting Adjunctions]
   Let $A \overset{F}{\underset{G}{\leftrightarrows}} B$ be a monoidal adjunction,
-  $\Sigma_A : \Sig(A)$ and $\Sigma_B : \Sig(B)$ two signatures such that
-  there is a natural isomorphism $\alpha : \Sigma_B F \to F \Sigma_A$ with
-  $\pi_1 \circ \alpha = \Id_{\Mon(B)}$, then, there is an adjunction on
+  $Σ_A : \Sig(A)$ and $Σ_B : \Sig(B)$ two signatures such that
+  there is a natural isomorphism $α : Σ_B F → F Σ_A$ with
+  $π_1 \circ α = \Id_{\Mon(B)}$, then, there is an adjunction on
   models such that
   %
   \[
   \begin{tikzcd}[row sep=large]
-    \Model(\Sigma_A) \ar[r, bend left=20, "F" {name=FT}] \ar[d]
-      & \Model(\Sigma_B) \ar[l, bend left=20, "G" {name=GT}] \ar[d]
-        \ar[from=FT, to=GT, phantom, "\bot"] \\
+    \Model(Σ_A) \ar[r, bend left=20, "F" {name=FT}] \ar[d]
+      & \Model(Σ_B) \ar[l, bend left=20, "G" {name=GT}] \ar[d]
+        \ar[from=FT, to=GT, phantom, "\perp"] \\
     \Mon(A) \ar[r, bend left=20, "F" {name=FB}]
       & \Mon(B) \ar[l, bend left=20, "G" {name=GB}]
-      \ar[from=FB, to=GB, phantom, "\bot"]
+      \ar[from=FB, to=GB, phantom, "\perp"]
   \end{tikzcd}
   \]
 \end{theorem}
 
 \begin{theorem}
-  Moreover, if $F : A \to B$ isfully faithful, then $\Model(\Sigma_A)$
-  has an initial object iff $\Model(\Sigma_A)$ has one.
+  Moreover, if $F : A → B$ isfully faithful, then $\Model(Σ_A)$
+  has an initial object iff $\Model(Σ_A)$ has one.
 \end{theorem}
 
 \subsection{Equivalence}
 \begin{theorem}[Lifting Equivalences]
   Let $A \cong B$ be an equivalence of monodial categories,
-  $\Sigma_A : \Sig(A)$ and $\Sigma_B : \Sig(B)$ two signatures such that
-  there is a natural isomorphism $\alpha : \Sigma_B F \to F \Sigma_A$ with
-  $\pi_1 \circ \alpha = \Id_{\Mon(B)}$, then, there is an isomorphism of categories
-  \[ \Model(\Sigma_A) \cong \Model(\Sigma_B) \]
+  $Σ_A : \Sig(A)$ and $Σ_B : \Sig(B)$ two signatures such that
+  there is a natural isomorphism $α : Σ_B F → F Σ_A$ with
+  $π_1 \circ α = \Id_{\Mon(B)}$, then, there is an isomorphism of categories
+  \[ \Model(Σ_A) \cong \Model(Σ_B) \]
 \end{theorem}
