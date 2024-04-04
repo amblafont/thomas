@@ -16,9 +16,9 @@ $[\Set^T,\Set^T]$ and $[\Set^{T'},\Set^{T'}]$.
 This issue is not surprising as a translation of simply-typed languages
 should first rely on a translation of typing systems $g : T → T'$,
 which is not accounted by initiality.
-Actually, such a translation $g : T → T'$ naturally acts on the underlying
+In fact, such a translation $g : T → T'$ naturally acts on the underlying
 categories:
-
+%
 \begin{proposition}
   \label{prop:adj-type}
   Given a morphism $g : T → T'$, as both $T$ and $T'$ are small, $g$ admits left Kan extensions
@@ -26,9 +26,9 @@ categories:
   defined by $\vec{g}(Γ)(t') := \bigsqcup_{t : T,\; g(t) = t'} Γ(t)$
   and denoted the retyping functor.
   Moreover, it is part of an adjunction between $\Set^T$ and $\Set^{T'}$,
-  which in turn induces an adjunction on the endofunctors categories such
-  that the functor $\overline{g} : [\Set^T,\Set^T] → [\Set^{T'},\Set^{T'}]$
-  is a monoidal.
+  that in turn, induces an adjunction on the endofunctors categories such
+  that the functor $\overline{g} : [\Set^{T'},\Set^{T'}] → [\Set^T,\Set^T]$
+  is a monoidal:
   %
   \begin{align*}
     \begin{tikzcd}[ampersand replacement = \&, column sep=large]
@@ -43,10 +43,16 @@ categories:
     \end{tikzcd}
   \end{align*}
 \end{proposition}
+%
+\noindent Moreover, as the functor $\overline{g} : [\Set^{K'},\Set^{K'}] →
+[\Set^K,\Set^K]$ is monoidal, it induces a functor on the categories of monoids
+$\overline{g} : \Mon([\Set^{K'},\Set^{K'}]) → \Mon([\Set^K,\Set^K])$,
+monoids which are the base of the definition of models.
 
 % headline
-A first solution to this issue was investigated by Ahrens \cite{ExtendedInitiality12}
-by integrated the type system directly into the framework.
+A first solution to this issue was proposed by Ahrens \cite{ExtendedInitiality12},
+that leverage this fact to integrate the type system directly into the framework
+in order to get a stronger recursion principle.
 % How to
 Throughout the framework, Ahrens replaced the category of monads over the
 initial $S$-algebra $\Mon([\Set^{T},\Set^{T}])$ by the total category of
@@ -66,27 +72,46 @@ system admitting a $S$-structure.
 % Morphism
 Morphisms $(K,M) → (K',M')$ are then pairs $(g,f)$ where $g : K → K'$ is
 a morphism of $S$-algebra translating the type systems, and $f : M → \overline{g}M'$
-a morphism of monads\footnote{
-  By \cref{prop:adj-type}, the functor $\overline{g} : [\Set^K,\Set^K] → [\Set^{K'},\Set^{K'}]$
-  associated to $g$ is monoidal, and hence generates a functor
-  $\overline{g} : \Mon([\Set^K,\Set^K]) → \Mon([\Set^{K'},\Set^{K'}])$.
-}
-translating terms after retying.
+a morphism of monads translating terms after retying.
+Note, that $\overline{g}$ is essential here for homogeneity.
 % Why it works
 Using the total category then provides us a stronger recursion principle as
 there is automatically a unique translation of languages from the initial model
-to any other langages with a $\Sigma$-structure and a type system admitting a $S$-structure.
-Moreover, unfolding the definition provides exactly the translation one would expect.
+to any other langages with a type system admitting a $S$-structure, and constructors admitting a $\Sigma$-structure.
+Moreover, unfolding the definition provides us exactly the usual translation one would expect.
 % Downsides
-While this approach technically works, this is at the cost of technical modifications
-to the entire framework in particular to signatures.
+While this approach technically works, it is internal to the framework, and
+is at the cost of technical modifications to the entirety of it, in
+particular to the notion of signatures.
 Furthermore, the endofunctors categories $[\Set^K,\Set^K]$ are now fully hardcoded
 in the framework, whereas before it could take any fitting monoidal category as input
 enabling to represent different kind of languages by changing the input category.
 
-\todot{Attempted by me and Benedikt} \\
-An attempted has been presented in \cite{IntroductionIS24} that is low level
-but fails to provide a general result.
+% Intro
+To go around this issue, rather than modifying the framework to get a
+stronger recursion principle, Lamiaux and Ahrens \cite[Section 9.4]{IntroductionIS24}
+suggested an external solution that manipulates the framework with modifying it.
+% Method
+To translate a language to another, they suggested to directly translate the
+monoid underlying the model of the target language using the monoidal
+functor $\overline{g}$, and to then build a model of the source language on
+top of it to get a translation by initiality.
+% Example
+They investigated this idea through the example of type erasure from the
+simply-typed lambda calculus to the untyped one, and shown that once the
+definition unfolded, it is easy to build a model on top of the translated
+monoid provided tedious bureaucracy.
+%
+While this approach seems to work on well chosen examples, to make it
+viable, it is necessary to identify general conditions for it to apply, when
+those conditions are satisfied, and in which case if they are reasonable
+enough to be applied in practice.
+
+\todot{In the remainder, we do all of that ...}
+
+
+
+\vspace*{2cm}
 
 \todot{Us}
 We pursue this approach and show that the metatheory presented in
