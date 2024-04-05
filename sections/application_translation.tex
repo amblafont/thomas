@@ -27,7 +27,7 @@ categories:
   and denoted the retyping functor.
   Moreover, it is part of an adjunction between $\Set^T$ and $\Set^{T'}$,
   that in turn, induces an adjunction on the endofunctors categories such
-  that the functor $\overline{g} : [\Set^{T'},\Set^{T'}] → [\Set^T,\Set^T]$
+  that the functor $\ol{g} : [\Set^{T'},\Set^{T'}] → [\Set^T,\Set^T]$
   is a monoidal:
   %
   \begin{align*}
@@ -39,14 +39,14 @@ categories:
     \begin{tikzcd}[ampersand replacement = \&, column sep=large]
       {[}\Set^T{,}\Set^T{]} \ar[r, bend left, "\underline{g}(X_T) \;:=\; \vec{g} ∘ X_T ∘ g^*"]
                 \ar[r, phantom, "\perp"]
-        \& {[}\Set^{T'}{,}\Set^{T'}{]} \ar[l, bend left, "\overline{g}(X_{T'}) \,:=\, g^* ∘ X_{T'} ∘ \vec{g}"]
+        \& {[}\Set^{T'}{,}\Set^{T'}{]} \ar[l, bend left, "\ol{g}(X_{T'}) \,:=\, g^* ∘ X_{T'} ∘ \vec{g}"]
     \end{tikzcd}
   \end{align*}
 \end{proposition}
 %
-\noindent Moreover, as the functor $\overline{g} : [\Set^{K'},\Set^{K'}] →
+\noindent Moreover, as the functor $\ol{g} : [\Set^{K'},\Set^{K'}] →
 [\Set^K,\Set^K]$ is monoidal, it induces a functor on the categories of monoids
-$\overline{g} : \Mon([\Set^{K'},\Set^{K'}]) → \Mon([\Set^K,\Set^K])$,
+$\ol{g} : \Mon([\Set^{K'},\Set^{K'}]) → \Mon([\Set^K,\Set^K])$,
 monoids which are the base of the definition of models.
 
 % headline
@@ -71,9 +71,9 @@ languages with type system $T$, we are allowed any languages with a type
 system admitting a $S$-structure.
 % Morphism
 Morphisms $(K,M) → (K',M')$ are then pairs $(g,f)$ where $g : K → K'$ is
-a morphism of $S$-algebra translating the type systems, and $f : M → \overline{g}M'$
+a morphism of $S$-algebra translating the type systems, and $f : M → \ol{g}M'$
 a morphism of monads translating terms after retying.
-Note, that $\overline{g}$ is essential here for homogeneity.
+Note, that $\ol{g}$ is essential here for homogeneity.
 % Why it works
 Using the total category then provides us a stronger recursion principle as
 there is automatically a unique translation of languages from the initial model
@@ -94,7 +94,7 @@ suggested an external solution that manipulates the framework with modifying it.
 % Method
 To translate a language to another, they suggested to directly translate the
 monoid underlying the model of the target language using the monoidal
-functor $\overline{g}$, and to then build a model of the source language on
+functor $\ol{g}$, and to then build a model of the source language on
 top of it to get a translation by initiality.
 % Example
 They investigated this idea through the example of type erasure from the
@@ -102,27 +102,36 @@ simply-typed lambda calculus to the untyped one, and shown that once the
 definition unfolded, it is easy to build a model on top of the translated
 monoid provided tedious bureaucracy.
 %
-While this approach seems to work on well chosen examples, to make it
-viable, it is necessary to identify general conditions for it to apply, when
-those conditions are satisfied, and in which case if they are reasonable
-enough to be applied in practice.
+While this approach do not have the downsides of the internal approach and
+seems to work on well chosen examples, it remains to provide a general
+procedure.
 
-\todot{In the remainder, we do all of that ...}
+% Introduction
+To make the external approach viable, it is necessary to identify general
+conditions for it to apply, when those conditions are satisfied, and in
+which case if they are reasonable enough to be applied in practice.
+% theorem
+As $\ol{g} : [\Set^{T'},\Set^{T'}] → [\Set^T,\Set^T]$ is monoidal, applying
+the metatheoretical result \cref{thm:fct-models} provide us with such
+general conditions.
+%
+Given two signatures  $Σ_{T} : \Sig([\Set^T,\Set^T])$ and $Σ_{T'} : \Sig([\Set^{'T'},\Set^{'T'}])$
+it suffices for natural transformation $α : Σ_{T} \ol{g} → \ol{g} Σ_{T'}$ such
+that $π_1 \circ α = \Id$, for it to exist a functor:
+%
+\[ \ol{g} : \Model(Σ_{T'}) → \Model(Σ_{T}) \]
+%
+In the following, we that that every binding signature $\Sigma_{T}$ and
+morphism of $S$-algebra $g : T \to T'$ induces a signature $\ol{\Sigma_{T}}$
+that satisfies the condition, and hence a functor $\ol{g} : \Model(\ol{Σ_{T}}) → \Model(Σ_{T})$
+that enables to translate languages.
+%
+We further show that it enables to build a total category externally to the
+framework, and to prove general initiality theorem to the framework,
+recovering a more general result than the internal approach without its
+downsides.
 
-
-
-\vspace*{2cm}
-
-\todot{Us}
-We pursue this approach and show that the metatheory presented in
-\todot{cref} can be leverage to entend the recursion principle to
-translating simply-type languages with different type systems, and that is
-enables us to recover a stronger result then \cite{ExtendedInitiality12}.
-
-\subsection{Small Functors}
-\todoLipsum{1}
-
-\subsection{Simply-Typed Algebraic as Small Functors}
+\subsection{Small Functors and Algebraic Signatures}
 \todoLipsum{1}
 
 \subsection{Translation across simply-typed systems}
